@@ -1,0 +1,11 @@
+﻿  ComputerPlayer.cpp
+C:\Users\antonio.ackalin\Documents\Visual Studio Projects\TicTacToeFoe\ComputerPlayer.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Display.cpp
+C:\Users\antonio.ackalin\Documents\Visual Studio Projects\TicTacToeFoe\Display.cpp(19,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\antonio.ackalin\Documents\Visual Studio Projects\TicTacToeFoe\Display.cpp(23,30): warning C4018: '<': signed/unsigned mismatch
+  Grid.cpp
+  HumanPlayer.cpp
+  Player.cpp
+  TicTacToeFoe.cpp
+  Generating Code...
+  TicTacToeFoe.vcxproj -> C:\Users\antonio.ackalin\Documents\Visual Studio Projects\TicTacToeFoe\x64\Debug\TicTacToeFoe.exe

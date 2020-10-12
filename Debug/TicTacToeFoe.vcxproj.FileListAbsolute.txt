@@ -1,0 +1,2 @@
+C:\Users\antonio.ackalin\Documents\Visual Studio Projects\TicTacToeFoe\Debug\TicTacToeFoe.exe
+C:\Users\antonio.ackalin\Documents\Visual Studio Projects\TicTacToeFoe\Debug\TicTacToeFoe.pdb
