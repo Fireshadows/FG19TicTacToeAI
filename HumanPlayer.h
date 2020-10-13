@@ -6,7 +6,7 @@ class HumanPlayer : public Player
 public:
 	HumanPlayer(char p_marker);
 
-	int DecideMove() override;
+	int DecideMove(Grid* p_grid) override;
 private:
 	void ValidateInput();
 
