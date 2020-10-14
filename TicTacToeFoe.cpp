@@ -13,8 +13,8 @@ int main()
 {
     Grid* m_grid = new Grid();
 
-    Player* m_player1 = new HumanPlayer('X');
-    Player* m_player2 = new HumanPlayer('O');
+    Player* m_player1 = new ComputerPlayer('X');
+    Player* m_player2 = new ComputerPlayer('O');
 
     Player* m_players [] {m_player1, m_player2};
 
@@ -35,9 +35,10 @@ int main()
 					m_success = m_grid->PlaceMarker(m_selection, m_players[i]->m_marker);
 			}
 
-			if (m_grid->CheckVictory(m_selection, m_players[i]->m_marker))
+			if (m_grid->CheckVictoryRecord(m_selection, m_players[i]->m_marker))
 			{
-				std::cout << "GAME OVER! Player " << (i+1) << " won!\n";
+				std::cout << "GAME OVER! Player " << (i + 1) << " won!\n";
+				//std::cout << "GAME OVER! Player " << m_grid->m_winningMarker << " won!\n";
 				m_running = false;
 				break;
 			}

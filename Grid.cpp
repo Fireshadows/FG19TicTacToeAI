@@ -1,13 +1,13 @@
 #include "Grid.h"
 #include <iostream>
-#include <vector>
 
 Grid::Grid()
 {
 	m_display = new Display();
+	m_winningMarker = ' ';
 }
 
-bool Grid::PlaceMarker(int p_index, char p_marker)
+bool Grid::PlaceMarker(int p_index, char p_marker, bool p_print)
 {
 	if (m_grid[p_index] != m_empty) {
 		std::cout << "Can't place marker here!\n";
@@ -15,9 +15,15 @@ bool Grid::PlaceMarker(int p_index, char p_marker)
 	}
 
 	m_grid[p_index] = p_marker;
-	m_display->PrintGrid(m_grid);
+	if(p_print)
+		m_display->PrintGrid(m_grid);
 	
 	return true;
+}
+
+void Grid::ClearMarker(int p_index)
+{
+	m_grid[p_index] = m_empty;
 }
 
 bool Grid::CheckVictory(int p_index, char p_marker)
@@ -36,15 +42,25 @@ bool Grid::CheckVictory(int p_index, char p_marker)
 
 bool Grid::HasEmptyTiles()
 {
-	for (unsigned int i = 0; i < 9; i++)
+	for (char tile : m_grid)
 	{
-		if (m_grid[i] == m_empty)
+		if (tile == m_empty)
 			return true;
 	}
 	return false;
 }
 
-int* Grid::GetEmptyTiles()
+bool Grid::CheckVictoryRecord(int p_index, char p_marker)
+{
+	bool m_success = CheckVictory(p_index, p_marker);
+
+	if (m_success)
+		m_winningMarker = p_marker;
+
+	return m_success;
+}
+
+std::vector<int> Grid::GetEmptyTiles()
 {
 	std::vector<int> emptyTiles;
 
@@ -54,7 +70,9 @@ int* Grid::GetEmptyTiles()
 			emptyTiles.push_back(i);
 	}
 
-	return &emptyTiles[0];
+	//static int* m_returnTiles = &emptyTiles[0];
+
+	return emptyTiles;
 }
 
 bool Grid::HorizontalCheck(int p_index, char p_marker)

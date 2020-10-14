@@ -1,6 +1,8 @@
 #pragma once
 #include "Player.h"
 
+#include <map>
+
 class ComputerPlayer : public Player
 {
 public:
@@ -9,6 +11,6 @@ public:
 	int DecideMove(Grid* p_grid) override;
 private:
 
-	int RandomSelection();
-	int MiniMax();
+	int RandomSelection(Grid* p_grid);
+	map<string, int> MiniMax(Grid* p_grid, char p_marker);
 };

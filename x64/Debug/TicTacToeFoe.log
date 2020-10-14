@@ -1,7 +1,7 @@
 ﻿  ComputerPlayer.cpp
-  HumanPlayer.cpp
-  Player.cpp
+C:\Users\Antonio Ackalin\Documents\SourceTree\TicTacToeAI\ComputerPlayer.cpp(8,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Antonio Ackalin\Documents\SourceTree\TicTacToeAI\ComputerPlayer.cpp(46,55): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
   TicTacToeFoe.cpp
   Generating Code...
-C:\Users\Antonio Ackalin\Documents\SourceTree\TicTacToeAI\ComputerPlayer.cpp(7,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Antonio Ackalin\Documents\SourceTree\TicTacToeAI\ComputerPlayer.cpp(48,56): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
   TicTacToeFoe.vcxproj -> C:\Users\Antonio Ackalin\Documents\SourceTree\TicTacToeAI\x64\Debug\TicTacToeFoe.exe

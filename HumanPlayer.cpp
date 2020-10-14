@@ -1,8 +1,6 @@
 #include "HumanPlayer.h"
 #include <iostream>
 
-#undef max
-
 HumanPlayer::HumanPlayer(char p_marker) : Player(p_marker)
 {
 	m_input = 0;

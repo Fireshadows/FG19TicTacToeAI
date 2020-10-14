@@ -9,7 +9,7 @@ bool Player::HasAvailableMoves(Grid* p_grid)
 {
 	if (!p_grid->HasEmptyTiles()) {
 		cout << "No tiles left - It's a draw!";
-		Sleep(1000);
+		Sleep(2000);
 		return false;
 	}
 	return true;

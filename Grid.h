@@ -1,15 +1,23 @@
 #pragma once
 #include "Display.h"
+#include <vector>
 
 class Grid
 {
 public:
 	Grid();
 
-	bool PlaceMarker(int p_index, char p_marker);
+	bool PlaceMarker(int p_index, char p_marker, bool p_print = true);
 	bool CheckVictory(int p_index, char p_marker);
+	void ClearMarker(int p_index);
 	bool HasEmptyTiles();
-	int* GetEmptyTiles();
+
+	bool CheckVictoryRecord(int p_index, char p_marker);
+
+	std::vector<int> GetEmptyTiles();
+	//int* GetEmptyTiles();
+
+	char m_winningMarker;
 
 private:
 	Display* m_display;

@@ -5,6 +5,8 @@
 #include <Windows.h>
 
 using namespace std;
+#undef min
+#undef max
 
 class Player
 {
