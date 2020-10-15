@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.h"
+#include "MiniMax.h"
 
 #include <map>
 
@@ -12,5 +13,7 @@ public:
 private:
 
 	int RandomSelection(Grid* p_grid);
-	map<string, int> MiniMax(Grid* p_grid, char p_marker);
+	int MiniMaxSelection(Grid* p_grid);
+	
+	MiniMax* m_miniMax;
 };

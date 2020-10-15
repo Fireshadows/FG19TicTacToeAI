@@ -11,7 +11,7 @@ int HumanPlayer::DecideMove(Grid* p_grid)
 	m_input = 0;
 	if (HasAvailableMoves(p_grid))
 	{
-		cout << "Your turn! Input a number 1-9 to place your marker! Input 0 to quit: ";
+		cout << "Player " << m_marker << "'s turn! Input a number 1-9 to place your marker! Input 0 to quit: ";
 		cin >> m_input;
 
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -24,7 +24,6 @@ int HumanPlayer::DecideMove(Grid* p_grid)
 
 void HumanPlayer::ValidateInput()
 {
-
 	while (true)
 	{
 		if (cin.fail())

@@ -4,7 +4,6 @@
 Grid::Grid()
 {
 	m_display = new Display();
-	m_winningMarker = ' ';
 }
 
 bool Grid::PlaceMarker(int p_index, char p_marker, bool p_print)
@@ -15,15 +14,19 @@ bool Grid::PlaceMarker(int p_index, char p_marker, bool p_print)
 	}
 
 	m_grid[p_index] = p_marker;
-	if(p_print)
-		m_display->PrintGrid(m_grid);
-	
+	if (p_print)
+		Print();
 	return true;
 }
 
 void Grid::ClearMarker(int p_index)
 {
 	m_grid[p_index] = m_empty;
+}
+
+void Grid::Print()
+{
+	m_display->PrintGrid(m_grid);
 }
 
 bool Grid::CheckVictory(int p_index, char p_marker)
@@ -48,16 +51,6 @@ bool Grid::HasEmptyTiles()
 			return true;
 	}
 	return false;
-}
-
-bool Grid::CheckVictoryRecord(int p_index, char p_marker)
-{
-	bool m_success = CheckVictory(p_index, p_marker);
-
-	if (m_success)
-		m_winningMarker = p_marker;
-
-	return m_success;
 }
 
 std::vector<int> Grid::GetEmptyTiles()

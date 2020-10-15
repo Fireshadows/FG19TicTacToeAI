@@ -10,14 +10,10 @@ public:
 	bool PlaceMarker(int p_index, char p_marker, bool p_print = true);
 	bool CheckVictory(int p_index, char p_marker);
 	void ClearMarker(int p_index);
+	void Print();
 	bool HasEmptyTiles();
 
-	bool CheckVictoryRecord(int p_index, char p_marker);
-
 	std::vector<int> GetEmptyTiles();
-	//int* GetEmptyTiles();
-
-	char m_winningMarker;
 
 private:
 	Display* m_display;

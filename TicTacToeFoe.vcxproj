@@ -143,6 +143,7 @@
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
+    <ClCompile Include="MiniMax.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TicTacToeFoe.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="Display.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="HumanPlayer.h" />
+    <ClInclude Include="MiniMax.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
