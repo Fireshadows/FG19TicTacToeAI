@@ -45,9 +45,9 @@ bool Grid::CheckVictory(int p_index, char p_marker)
 
 bool Grid::HasEmptyTiles()
 {
-	for (char tile : m_grid)
+	for (char m_tile : m_grid)
 	{
-		if (tile == m_empty)
+		if (m_tile == m_empty)
 			return true;
 	}
 	return false;
@@ -55,17 +55,15 @@ bool Grid::HasEmptyTiles()
 
 std::vector<int> Grid::GetEmptyTiles()
 {
-	std::vector<int> emptyTiles;
+	std::vector<int> m_emptyTiles;
 
 	for (unsigned int i = 0; i < 9; i++)
 	{
 		if (m_grid[i] == m_empty)
-			emptyTiles.push_back(i);
+			m_emptyTiles.push_back(i);
 	}
-
-	//static int* m_returnTiles = &emptyTiles[0];
-
-	return emptyTiles;
+	
+	return m_emptyTiles;
 }
 
 bool Grid::HorizontalCheck(int p_index, char p_marker)

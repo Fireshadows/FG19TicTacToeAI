@@ -16,7 +16,6 @@ int HumanPlayer::DecideMove(Grid* p_grid)
 
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-
 		ValidateInput();
 	}
 	return m_input;
