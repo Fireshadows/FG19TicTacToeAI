@@ -1,11 +1,13 @@
 #include "MiniMax.h"
 #include <vector>
+#include <algorithm>
+#include <iostream>
 
 MiniMax::MiniMax(char p_maxPlayer) : m_maxPlayer(p_maxPlayer), m_winningPlayer(' ')
 {
 }
 
-std::map<string, int> MiniMax::Run(Grid* p_grid, char p_player)
+std::map<string, int> MiniMax::Run(Grid* p_grid, int p_alpha, int p_beta, char p_player)
 {
 	map<string, int> m_bestMove;
 	map<string, int> m_simulatedMove;
@@ -40,7 +42,7 @@ std::map<string, int> MiniMax::Run(Grid* p_grid, char p_player)
 		p_grid->PlaceMarker(selection, p_player, false);
 		if (p_grid->CheckVictory(selection, p_player))
 			m_winningPlayer = p_player;
-		m_simulatedMove = Run(p_grid, m_otherPlayer);
+		m_simulatedMove = Run(p_grid, p_alpha, p_beta, m_otherPlayer);
 
 		//Undo simulation
 		p_grid->ClearMarker(selection);
@@ -51,11 +53,17 @@ std::map<string, int> MiniMax::Run(Grid* p_grid, char p_player)
 		if (p_player == m_maxPlayer) {
 			if (m_simulatedMove["score"] > m_bestMove["score"])
 				m_bestMove = m_simulatedMove;
+			p_alpha = std::max(m_simulatedMove["score"], p_alpha);
 		}
 		else {
 			if (m_simulatedMove["score"] < m_bestMove["score"])
 				m_bestMove = m_simulatedMove;
+			p_beta = std::min(m_simulatedMove["score"], p_beta);
 		}
+
+		//Pruning
+		if (p_beta <= p_alpha)
+			break;
 	}
 
 	return m_bestMove;

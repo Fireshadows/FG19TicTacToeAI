@@ -30,5 +30,5 @@ int ComputerPlayer::RandomSelection(Grid* p_grid)
 
 int ComputerPlayer::MiniMaxSelection(Grid* p_grid)
 {
-	return m_miniMax->Run(p_grid, m_marker)["selection"] + 1;
+	return m_miniMax->Run(p_grid, numeric_limits<int>::min(), numeric_limits<int>::max(), m_marker)["selection"] + 1;
 }
